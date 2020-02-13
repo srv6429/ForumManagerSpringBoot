@@ -2,7 +2,7 @@
  *
  *
  * Fonctions javascript utilisées pour répondre aux actions prises sur la page posts.html
- * envoie des requête ajax au moyens de méthodes: get, post, put et delete
+ * Envoient des requêtes ajax au moyens de méthodes: get, post, put et delete
  * 
  */
 
@@ -47,7 +47,7 @@ jQuery(function(){
 	//*******************************************************************************
 
 	jQuery(".cancel_update_button").click(function(event){
-	//Clic sur le boton "Annuler"
+	//Clic sur le bouton "Annuler"
 
 
 		console.log("click cancel");

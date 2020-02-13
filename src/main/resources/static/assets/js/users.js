@@ -2,7 +2,7 @@
  *
  *
  * Fonctions javascript utilisées pour répondre aux actions prises sur la page users.html
- * envoie des requête ajax au moyens de méthodes: get, post, put et delete
+ * Envoient des requêtes ajax au moyens de méthodes: get, post, put et delete
  * 
  */
 
