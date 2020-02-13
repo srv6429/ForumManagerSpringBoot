@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	layout:decorator="layout">
+	<head>
+		<title>Liste des commentaires</title>		
+	</head>
+	<body>
+		<div layout:fragment="content">
+        <h4>Welcome <span sec:authentication="principal.username">User</span> (<span th:text="${user.id}"></span>) <span sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{message.welcome.admin}">Administrateur</span></h4>
+
+			<div id="posts-container">
+				<h4 th:text="${topic.title}">Topic title</h4>
+			 
+	      		 <div id="new_post_form">
+		       	 	<h5>Nouveau commentaire</h5>
+			        <form>
+			        	<label>Commentaire: </label><br />
+			        	<textarea id="new_post_comment"></textarea><br />
+			        	<input type="hidden" id="topicId" th:value="${topic.id}" />
+						<div class="button_wrapper" id="new_button_wrapper">
+							<button class="new_send_button" id="new_send_button">Enregistrer</button>
+							<button class="new_cancel_button" id="new_cancel_button">Annuler</button>
+						</div>
+			        </form>
+		       	</div>
+	       
+				<div id="result"></div>
+	
+				<table id="posts_table">
+					<tr class="posts_header">
+						<th>
+							<span class="identifier">Id</span> 
+							<span class="creator">Créateur</span> 
+							<span class="creation_date">Date de création</span>
+							<span class="update_date">Dernière mise à jour</span>
+							<span class="editor_button">
+								<button class="new_post_button" id="new_post_button">Ajouter un commentaire</button>
+							</span>
+						</th>
+					</tr>
+	
+					<tr th:each="post: ${posts}" th:class="${postStat.odd}? 'odd':'even' ">
+						<td>
+							<span class="identifier" th:text="${post.id}">Id</span>
+							<span class="creator" th:text="${post.userFK.username}">Creator Name</span>
+							<span class="creation_date" th:text="${post.creationDate}">Date de création</span> 
+							<span class="update_date" th:text="${post.updateDate}">Date de mise à jour</span>
+							<span class="editor_button" th:if="${post.userFK.id == user.id or user.isAdmin() == true}">
+								<button class="update_post_button" th:id="${post.id}">Modifier</button>
+								<button th:class="delete_post_button" th:id="${post.id}">Retirer</button>
+							</span>
+							<div class="comment" th:text="${post.comment}" th:id="${post.id}">Commentaire</div>
+							
+							<!-- formulaire d'édition d'un post -->
+							<div th:id="${post.id}" class="post_form">
+								<form>
+									<textarea class="update_post_text" th:id="${post.id}" th:text="${post.comment}"></textarea>
+								</form>
+								<div class="update_button_wrapper" th:id="${post.id}">
+									<button class="send_update_button" th:id="${post.id}">Enregistrer</button>
+									<button class="cancel_update_button" th:id="${post.id}">Annuler</button>
+								</div>	
+							</div>
+						</td>
+					</tr>
+				</table>
+				
+
+
+			</div>
+		</div>
+	</body>
+
+</html>

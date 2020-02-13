@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorator="layout">
+   <!-- 
+   	
+   		Page d'accueil pour les adminstrateurs
+   
+    -->   
+      <head>
+        <title>Admin Home</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
+        <h4>Welcome <span sec:authentication="principal.username">User</span> (<span th:text="${user.id}"></span>) <span sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{message.welcome.admin}">Administrateur</span></h4>
+	       	<p sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin/users}" th:text="#{label.users}">Utilisateurs</a></p>
+	        <p sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></p>
+    	</div>
+    	
+    </body>
+    
+</html>

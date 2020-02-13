@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorator="layout">
+      
+	<head>
+		<title>Topics</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
+	        <h4>Welcome <span sec:authentication="principal.username">User</span> (<span th:text="${user.id}"></span>) <span sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{message.welcome.admin}">Administrateur</span></h4>
+	       <!--
+	       	 <h3>Nouveau thème</h3>
+	       	 
+	        <form th:action="@{/topics}" method="post" id="new-topic-form">
+	        	<label>Titre: </label><br />
+	        	<input type="text" name="title" id="new-topic-title" size="30" maxlength="60" />
+	        	<input type="submit" value="Enregistrer"/>
+	        </form>
+	    	-->    
+	        
+		<div id="topics-container">
+	       <h3 th:text="#{title.topics}">Topics</h3>
+			<div id="result" ></div>
+			<!-- Formulaire d'jout d'un nouveau topic/post -->
+			<div id="new_topic_wrapper" class="topic_new_form">
+				<h4>Nouveau thème</h4>
+				<form th:action="@{/topics}" method="post" id="new-topic-form">
+					<label for="new-topic-title">Titre du nouveau thème</label><br />
+					<input type="text" id="new-topic-title" size="30"/><br />
+					<label for="new-post-comment">Commentaire</label><br />
+					<textarea id="new-post-comment" class="comment"></textarea>
+				</form>
+				<div class="button_wrapper" id="new_button_wrapper" style="text-align: left;">
+					<button class="new_send_button" id="new-topic-send">Enregistrer</button>
+					<button class="new_cancel_button" id="new-topic-cancel">Annuler</button>
+				</div>
+			</div>
+	
+
+	        	
+				<div id="result"></div>
+	        	<table id="topics_table">
+					<tr class="topics_header">
+						<th>
+							<span class="identifier">Id</span>
+							<span class="title">Titre</span>
+							<span class="creation_date">Date de création</span>
+							<span class="update_date">Dernière mise à jour</span>
+							<span class="creator"> Créateur (id)</span>
+							<span class="topic_editor_button">
+								<button class="new_button" id="new-topic-button">Ajouter un thème</button>
+							</span>
+				</th>
+			</tr>	
+				
+	
+					<tr th:each="topic: ${topics}" th:class="${topicStat.odd}? 'odd':'even' ">
+						<td>
+	        				<span class="identifier" th:text="${topic.id}" th:id="${topic.id}"></span>
+	        				<span class="title"> <a th:href="@{'/posts/'+${topic.id}}" class="post_link"> <span th:text="${topic.title}">Title</span></a></span>
+	        				<span class="creation_date" th:text="${topic.creationDate}">Date de création</span>
+	        				<span class="update_date" th:text="${topic.updateDate}">Date de mise à jour</span>
+	        				<span class="creator"> 
+	        					<span th:text="${topic.creatorFK.username}">Créateur Nom</span> (<span th:text="${topic.creatorFK.id}">Id</span>)
+	        				</span>
+	        				
+        					<div class="topic_editor_button_wrapper button_wrapper visible" th:id="${topic.id}" th:if="${user.id == topic.creatorFK.id or user.isAdmin() == true}">
+								<button class="update_topic_button" th:id="${topic.id}">Modifier</button>
+								<button class="delete_topic_button" th:id="${topic.id}">Retirer</button>
+							</div>
+							
+		      				<div class="topic_editor_form" th:id="${topic.id}">
+								<!-- Formulaire d'édition d'un topic -->
+								<div th:id="${topic.id}" class="topic_form">
+									<form class="topic_editor_form" th:id="${topic.id}">
+										<label>Modifier le titre: </label>
+										<input type="text" th:id="${topic.id}" size="30" th:value="${topic.title}"/><br />
+										<button class="send_update_topic" th:id="${topic.id}">Enregistrer</button>
+										<button class="cancel_update_topic" th:id="${topic.id}">Annuler</button>
+									
+									</form>
+								</div>
+							</div>
+	        			</td>
+	        		</tr>
+	        	
+	        	 </table> 
+	        	
+	        	</div>
+	        </div>
+
+    	
+    </body>
+    
+</html>

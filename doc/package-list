@@ -1,0 +1,9 @@
+org.olumpos.forum
+org.olumpos.forum.config
+org.olumpos.forum.controllers
+org.olumpos.forum.entities
+org.olumpos.forum.repositories
+org.olumpos.forum.security
+org.olumpos.forum.services
+org.olumpos.forum.utils
+org.olumpos.forum.validators
