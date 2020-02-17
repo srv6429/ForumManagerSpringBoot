@@ -30,17 +30,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui permet de tester les différentes méthodes de la class TopicService.java
- * Ces méthode ssont appelées à partir des contrôleurs afin qu'elles puisses interagir avec la base de données
- * en fonction des requêtes et données transmises.
- * 
- * On utilise @MockBean pour les 'repositories' et service (TopicReository, PostRepository) afin d'émuler les accès à la base de données
- * puisqu'il s'agit de tester uniquement les méthodes de la classe TopicService et non les accès à la bd
- * 
- *
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui permet de tester les différentes méthodes de la class TopicService.java<br>
+ * Ces méthode ssont appelées à partir des contrôleurs afin qu'elles puisses interagir avec la base de données<br>
+ * en fonction des requêtes et données transmises.<br>
+ * <br>
+ * On utilise @MockBean pour les 'repositories' et service (TopicReository, PostRepository) afin d'émuler les accès à la base de données<br>
+ * puisqu'il s'agit de tester uniquement les méthodes de la classe TopicService et non les accès à la bd<br>
+ *<br> 
+ *<br>
  */
 
 @RunWith(SpringRunner.class)
@@ -72,7 +72,9 @@ public class TopicServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'obtention de la liste de tous les topics actifs ou non
+	 * <br>
+	 * Méthode qui teste l'obtention de la liste de tous les topics actifs ou non<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindAllTopics() {
@@ -133,7 +135,9 @@ public class TopicServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'obtention d'un topic en fonction de son identifiant
+	 * <br>
+	 * Méthode qui teste l'obtention d'un topic en fonction de son identifiant<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindTopicById() {
@@ -167,7 +171,9 @@ public class TopicServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'ajout d'un topic
+	 * <br>
+	 * Méthode qui teste l'ajout d'un topic<br>
+	 * <br>
 	 */
 	@Test
 	public void testAddTopic() {
@@ -208,15 +214,14 @@ public class TopicServiceTest {
 		assertEquals(topic, addedPair.getFirst());
 		assertEquals(post, addedPair.getSecond());
 		
-		
-		
-		
 	}
 	
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste la mise à jour d'un topic
+	 * <br>
+	 * Méthode qui teste la mise à jour d'un topic<br>
+	 * <br>
 	 */
 	@Test
 	public void testUpdateTopic() {
@@ -258,7 +263,9 @@ public class TopicServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste la fermeture d'un topic
+	 * <br>
+	 * Méthode qui teste la fermeture d'un topic<br>
+	 * <br>
 	 */
 	@Test
 	public void testDeleteTopic() {

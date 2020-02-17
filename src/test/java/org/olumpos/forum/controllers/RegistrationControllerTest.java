@@ -35,16 +35,19 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * 
- * @author daristote
- * 
- * Classe test qui permet de tester les endpoints de RegistrationController.java
- * On utilise @MockBean pour marquer le PostService utilisé dans le PostController
- * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthodes de PostService.java
- * 
- *  On utilise MockMvc pour émuler un appel aux différentes fonctions de RegistrationController qui gèrent les EndPoints
- *
- *	@TODO: erreur lors du test avec la méthode post: à vérifier
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe test qui permet de tester les endpoints de RegistrationController.java<br>
+ * <br>
+ * On utilise @MockBean pour marquer le PostService utilisé dans le PostController<br>
+ * <br>
+ * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthodes de PostService.java<br>
+ * <br>
+ *  On utilise MockMvc pour émuler un appel aux différentes fonctions de RegistrationController qui gèrent les EndPoints<br>
+ *  <br>
+ *	@TODO: erreur lors du test avec la méthode post: à vérifier<br>
+ *<br>
  */
 
 @RunWith(SpringRunner.class)

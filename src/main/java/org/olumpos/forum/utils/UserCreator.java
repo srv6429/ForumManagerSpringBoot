@@ -17,7 +17,7 @@ public class UserCreator {
 
 	
 	//Résultat:
-	//Chaque utilisateur se voit attibuer une mot de passe encrypté qui corresponda à son pseudonyme auquel on y annexe le suffixe '123' 
+	//Chaque utilisateur se voit attibuer une mot de passe encrypté qui correspond à son pseudonyme auquel on y annexe le suffixe '123' 
 	/*
 	insert into user (username, password, email, role, is_active) values
 		('admin', '$2a$10$GIG4T5Gz9RoYHwfHEIdNreMr3IvRZZIU9hSPnP0qsLfnCGERZOb0.', 'admin@olumpos.org', 1),
@@ -62,6 +62,14 @@ public class UserCreator {
 	
 		
 		System.out.println(sb.toString());
+		
+		for (int i = 0; i < 10; i++) {
+			
+			String encodedPassword = encoder.encode("admin123");
+			System.out.println(encodedPassword);
+			
+			System.out.println(encoder.matches("admin123", encodedPassword));
+		}
 	}
 	
 	//*************************************************************************************************************************************************
@@ -71,6 +79,9 @@ public class UserCreator {
 		UserCreator creator =  new UserCreator();
 		
 		creator.createInsertQuery();
+		
+		
+
 
 	}
 

@@ -19,14 +19,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui contient les 'endpoints' des requêtes http pour l'enregistrement d'un nouvel utilisateur
- * 
- * Les requêtes lieés aux 'users' sont gérées par les différentes méthodes définies ici
- * Les paramètres des méthodes contiennent les paramètres transmis dans les requêtes (GET, POST )
- * ainsi qu'une instance de l'interface Model qui permet d'inclure et modifier les attributs de session et des requêtes
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui contient les 'endpoints' des requêtes http pour l'enregistrement d'un nouvel utilisateur<br>
+ * <br>
+ * Les requêtes lieés aux 'users' sont gérées par les différentes méthodes définies ici<br>
+ * Les paramètres des méthodes contiennent les paramètres transmis dans les requêtes (GET, POST )<br>
+ * ainsi qu'une instance de l'interface Model qui permet d'inclure et modifier les attributs de session et des requêtes<br>
+ * <br>
  *
  */
 
@@ -48,13 +49,18 @@ public class RegistrationController {
 	@Autowired
 	private UserService userService;
 	
+	
+	//*************************************************************************************************************************************************
+	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet d'afficher la page contenant le formulaire d'inscription 
-	 * 
-	 * @param model : model auqual on ajoute un attribut 'user' de type User qui permet d'associer les
-	 * champs du formulaire dûment remplis aux champs appropriés de la classe User 
-	 * 
-	 * @return : une chaîne de caractères correspondant à la vue associée à la page html  
+	 * <br>
+	 * Méthode qui permet d'afficher la page contenant le formulaire d'inscription<br> 
+	 * <br>
+	 * @param model : model auqual on ajoute un attribut 'user' de type User qui permet d'associer les<br>
+	 * champs du formulaire dûment remplis aux champs appropriés de la classe User <br>
+	 * <br>
+	 * @return : une chaîne de caractères correspondant à la vue associée à la page html<br>
+	 * <br>  
 	 */
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -66,13 +72,17 @@ public class RegistrationController {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de valider et d'enregistrer un nouvel utilisteur dans la base de données
-	 * Elle est appelée suite à la soumission du formulaire de la page d'inscription
-	 * @param user : Objet de type User qui contient les champs initialisés par les valeurs correspondantes du formulaire
-	 * @param result : objet implémentant l'interface BindingResult et qui permettra d'enregistrer le résultat de la validation
-	 * @param model : le 'model' 
-	 * 
-	 * @return : une chaîne de caractères correspondant à une redirection vers la cue 'login' associé à la page html de connexion 
+	 * <br>
+	 * Méthode qui permet de valider et d'enregistrer un nouvel utilisteur dans la base de données<br>
+	 * <br>
+	 * Elle est appelée suite à la soumission du formulaire de la page d'inscription<br>
+	 * <br>
+	 * @param user : Objet de type User qui contient les champs initialisés par les valeurs correspondantes du formulaire<br>
+	 * @param result : objet implémentant l'interface BindingResult et qui permettra d'enregistrer le résultat de la validation<br>
+	 * @param model : le 'model' <br>
+	 * <br>
+	 * @return : une chaîne de caractères correspondant à une redirection vers la cue 'login' associé à la page html de connexion<br>
+	 * <br> 
 	 */
 	@PostMapping(value = "/register")//, method = RequestMethod.POST)
 	public String registration(@Valid User user, BindingResult result, Model model) {

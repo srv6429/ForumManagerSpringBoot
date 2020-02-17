@@ -26,16 +26,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui contient les 'endpoints' des requêtes http pour les posts
- * 
- * Les requêtes lieés aux posts sont gérées par les diffreéntes méthodes définies ici
- * Les paramètres des méthodes contiennent les paramètres transmis dans les requêtes (GET, POST, PUT, DELETE )
- * ainsi qu'une instance de l'interface Model qui permet d'inclure et modifier les attributs de session et des requêtes
- *
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui contient les 'endpoints' des requêtes http pour les posts<br>
+ * <br>
+ * Les requêtes lieés aux posts sont gérées par les diffreéntes méthodes définies ici<br>
+ * Les paramètres des méthodes contiennent les paramètres transmis dans les requêtes (GET, POST, PUT, DELETE )<br>
+ * ainsi qu'une instance de l'interface Model qui permet d'inclure et modifier les attributs de session et des requêtes<br>
+ *<br>
  */
+
 //Définir la classe comme un contrôleur
 @Controller
 //base des uri relatives aux requêtes http pour les posts
@@ -53,13 +54,14 @@ public class PostController {
 	private PostService postService;
 	
 	/**
-	 * Méthode qui permet de rrécupérer la liste des posts liés à un topic dont l'identitifiant est passé en paramètre dans la requête
-	 * @param id : identifiant du topic
-	 * @param model : model contenant les atrtibuts de la requête
-	 * @return "posts" : une chaîne de caractères (String) correspondantà la vue (i.e. page html vers laquelle l'utilisateur sera redirigé)
-	 * et qui sera chargée après le succès de la requête
-	 * 
-	 * TODO: gestion d'une exception si 'id' ne correspond pas à un topic valide
+	 * <br>
+	 * Méthode qui permet de récupérer la liste des posts liés à un topic dont l'identitifiant est passé en paramètre dans la requête<br>
+	 * @param id : identifiant du topic<br>
+	 * @param model : model contenant les atrtibuts de la requête<br>
+	 * @return "posts" : une chaîne de caractères (String) correspondantà la vue (i.e. page html vers laquelle l'utilisateur sera redirigé)<br>
+	 * et qui sera chargée après le succès de la requête<br>
+	 * <br>
+	 * TODO: gestion d'une exception si 'id' ne correspond pas à un topic valide<br>
 	 */
 	
 	@GetMapping(value= "/posts/{id}")
@@ -87,13 +89,17 @@ public class PostController {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Méthode qui permet d'enregistrer un nouveau commentaire associé à un topic
-	 * Utilisation de la méthode POST
-	 * @param topicId : l'identifiant du topic
-	 * @param comment : le nouveau commentaire à enregistrer
-	 * @param model : le model de la requête
-	 * @return : ResponseEntity paramétré avec un objet de type JSONResponse qui détermine si la réponse est valide ou non
-	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec
+	 * <br>
+	 * Méthode qui permet d'enregistrer un nouveau commentaire associé à un topic<br>
+	 * <br>
+	 * Utilisation de la méthode POST<br>
+	 * <br>
+	 * @param topicId : l'identifiant du topic<br>
+	 * @param comment : le nouveau commentaire à enregistrer<br>
+	 * @param model : le model de la requête<br>
+	 * @return : ResponseEntity paramétré avec un objet de type JSONResponse qui détermine si la réponse est valide ou non<br>
+	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec<br>
+	 *<br>
 	 */
 	
 	@PostMapping(value= "/posts/{id}/{comment}")//, produces = "application/json;charset=UTF-8")
@@ -123,12 +129,16 @@ public class PostController {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet d'enregistrer un commentaire modifié par l'utilisateur
-	 * Utilisation de la méthode PUT
-	 * @param id : l'identifiant du post
-	 * @param comment : le nouveau commentaire modifié à enregistrer
-	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non
-	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec
+	 * <br>
+	 * Méthode qui permet d'enregistrer un commentaire modifié par l'utilisateur<br>
+	 * 
+	 * Utilisation de la méthode PUT<br>
+	 * <br>
+	 * @param id : l'identifiant du post<br>
+	 * @param comment : le nouveau commentaire modifié à enregistrer<br>
+	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non<br>
+	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec<br>
+	 * <br>
 	 */
 	@PutMapping(value= "/posts/{id}/{comment}")//, produces = "application/json;charset=UTF-8")
 	public ResponseEntity<JSONResponse> updatePost(@PathVariable("id") int id, @PathVariable("comment") String comment) {
@@ -160,12 +170,18 @@ public class PostController {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet d'effacer un commentaire par l'utilisateur
-	 * Utilisation de la méthode DELETE
+	 * <br>
+	 * Méthode qui permet d'effacer un commentaire par l'utilisateur<br>
+	 * <br>
+	 * Utilisation de la méthode DELETE<br>
+	 * <br>
 	 * On n'efface pas le post de la bd; on ne fait que le désactivé. Ainsi il ne sera plus apparent dans la liste des posts
-	 * @param id : l'identifiant du post
-	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non
-	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec
+	 * <br>
+	 * <br>
+	 * @param id : l'identifiant du post<br>
+	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non<br>
+	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec<br>
+	 * <br>
 	 */
 	@DeleteMapping(value= "/posts/{id}")//, produces = "application/json;charset=UTF-8")
 	public ResponseEntity<JSONResponse>  deletePost(@PathVariable("id") int id) {

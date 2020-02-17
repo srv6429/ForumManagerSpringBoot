@@ -18,20 +18,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * 
- * @author daristote
- *
- * Classe qui permet de la gestion des accès à la base de données pour les objets de type Post
- * 
- * Utilisation des interfaces qui permettent l'accès aux tables Topic (TopicRepository) et Post (PostRepository)
- * Les instances qui implémentent les interfaces sont automatiquement injectées (CDI: Context Dependency Injetion) lors de l'instanciation de la classe
- * 
- * La classe est annotée avec @Transactional, ce qui assure que toutes les méthodes qui accèdent à la base de données le sont dans 
- * le cadre d'une transaction
- * 
- * On aurait pu annoter seulement les méthodes qui nécessitent une transaction, i.e. qui modifie les entreés des tables
- * Mais il est plus simple d'annoter la classe 
- * 
+ * <br>
+ * @author daristote<br>
+ *<br>
+ * Classe qui permet de la gestion des accès à la base de données pour les objets de type Post<br>
+ * <br>
+ * Utilisation des interfaces qui permettent l'accès aux tables Topic (TopicRepository) et Post (PostRepository)<br>
+ * Les instances qui implémentent les interfaces sont automatiquement injectées (CDI: Context Dependency Injetion) lors de l'instanciation de la classe<br>
+ * <br>
+ * La classe est annotée avec @Transactional, ce qui assure que toutes les méthodes qui accèdent à la base de données le sont dans <br>
+ * le cadre d'une transaction<br>
+ * <br>
+ * On aurait pu annoter seulement les méthodes qui nécessitent une transaction, i.e. qui modifie les entreés des tables<br>
+ * Mais il est plus simple d'annoter la classe <br>
+ * <br>
  */
 
 @Service
@@ -50,10 +50,11 @@ public class PostService {
 
 	
 	/**
-	 * 
-	 * Fonction qui permet d'obtenir tous les 'posts' de la table Post
-	 * 
-	 * @return: Une Collection de type List contenant toutes les entrées
+	 * <br>
+	 * Fonction qui permet d'obtenir tous les 'posts' de la table Post<br>
+	 * <br>
+	 * @return: Une Collection de type List contenant toutes les entrées<br>
+	 * <br>
 	 */
 	public List<Post> findAllPosts(){
 		logger.log(Level.INFO, "in postService.findAllPosts" );
@@ -70,10 +71,11 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * 
-	 * Fonction qui permet d'obtenir tous les 'posts' actifs, i.e. dont le champ 'isActive' = 1, de la table Post
-	 * 
-	 * @return: Une 'List' (interface Java) de type 'ArrayList' contenant toutes les entrées
+	 * <br>
+	 * Fonction qui permet d'obtenir tous les 'posts' actifs, i.e. dont le champ 'isActive' = 1, de la table Post<br>
+	 * <br>
+	 * @return: Une 'List' (interface Java) de type 'ArrayList' contenant toutes les entrées<br>
+	 * <br>
 	 */
 	public List<Post> findAllActivePosts(){
 		
@@ -91,10 +93,12 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Fonction qui permet d'obtenir tous les 'posts' actifs de la table Post qui appartiennent à un 'topic' en particulier
-	 *  
-	 * @param topicId: l'identifiant du 'topic'
-	 * @return : la liste de tous les 'posts' actifs du 'topic'
+	 * <br>
+	 * Fonction qui permet d'obtenir tous les 'posts' actifs de la table Post qui appartiennent à un 'topic' en particulier<br>
+	 *  <br>
+	 * @param topicId: l'identifiant du 'topic'<br>
+	 * @return : la liste de tous les 'posts' actifs du 'topic'<br>
+	 * <br>
 	 */
 	
 	public List<Post> findAllPostsByTopicId(int topicId){
@@ -113,10 +117,12 @@ public class PostService {
 	
 	
 	/**
-	 * Fonction qui permet d'obtenir tous les 'posts' de la table Post mais qui appartienne à un Topic en particulier
-	 *  
-	 * @param topicId: L'identifiant du Topic
-	 * @return : la liste de tous les posts du topic
+	 * <br>
+	 * Fonction qui permet d'obtenir tous les 'posts' de la table Post mais qui appartienne à un Topic en particulier<br>
+	 *  <br>
+	 * @param topicId: L'identifiant du Topic<br>
+	 * @return : la liste de tous les posts du topic<br>
+	 * <br>
 	 */
 	
 	public List<Post> findAllActivePostsByTopicId(int topicId){
@@ -136,9 +142,11 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Fonction qui permet de trouver une 'post' en fonction de son identifiant (id)
-	 * @param id : l'identifiant du 'post'
-	 * @return : une intance de la classe 'Post' contenant tous les détails du 'post'
+	 * <br>
+	 * Fonction qui permet de trouver une 'post' en fonction de son identifiant (id)<br>
+	 * @param id : l'identifiant du 'post'<br>
+	 * @return : une intance de la classe 'Post' contenant tous les détails du 'post'<br>
+	 * <br>
 	 */
 	
 	public Post findPostById(Integer id) {
@@ -157,9 +165,12 @@ public class PostService {
 	
 	
 	/**
-	 * Fonction qui permet de trouver un 'topic' en fonction de son identifiant (id)
-	 * @param id : l'identifiant du 'topic'
-	 * @return : une intance de la classe 'Topic' contenant tous les détails du 'topic'
+	 * <br>
+	 * Fonction qui permet de trouver un 'topic' en fonction de son identifiant (id)<br>
+	 * <br>
+	 * @param id : l'identifiant du 'topic'<br>
+	 * @return : une intance de la classe 'Topic' contenant tous les détails du 'topic'<br>
+	 * <br>
 	 */
 	public Topic findTopicById(int id) {
 		
@@ -174,11 +185,14 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Fonction qui permet d'ajouter un 'post' dans la BD
-	 * @param comment : le cmmentaire du 'post'
-	 * @param topicId : l'identifiant du topic auquel le 'post' est associé
-	 * @param user : l'utilisateur qui est l'auteur du 'post'
-	 * @return : Le 'post' ajouté à la BD , null si l'opération échoue
+	 * <br>
+	 * Fonction qui permet d'ajouter un 'post' dans la BD<br>
+	 * <br>
+	 * @param comment : le cmmentaire du 'post'<br>
+	 * @param topicId : l'identifiant du topic auquel le 'post' est associé<br>
+	 * @param user : l'utilisateur qui est l'auteur du 'post'<br>
+	 * @return : Le 'post' ajouté à la BD , null si l'opération échoue<br>
+	 * <br>
 	 */
 	
 	public Pair<Topic, Post> addPost(String comment, Integer topicId, User user) {
@@ -218,10 +232,12 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * 	Fonction qui permet d'ajouter un 'post' dans la BD
-	 * 	variant de la pcédente mais le paramtère est un objet de type Post
-	 * @param post : Le post contenant les infos
-	 * @return : le post tel que sauvegardé dans la BD
+	 * <br>
+	 * 	Fonction qui permet d'ajouter un 'post' dans la BD<br>
+	 * 	variant de la pcédente mais le paramtère est un objet de type Post<br>
+	 * @param post : Le post contenant les infos<br>
+	 * @return : le post tel que sauvegardé dans la BD<br>
+	 * <br>
 	 */
 	public Post addPost(Post post) {
 		
@@ -234,11 +250,13 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Fonction qui permet de mettre à jour le commentaire d'un 'post' 
-	 * 
-	 * @param id : l'identifiant du 'post'
-	 * @param comment : le nouveau commentaire modifé par l'utilisateur
-	 * @return : Le 'post' tel que sauvegardé dans la BD
+	 * <br>
+	 * Fonction qui permet de mettre à jour le commentaire d'un 'post'<br> 
+	 * <br>
+	 * @param id : l'identifiant du 'post'<br>
+	 * @param comment : le nouveau commentaire modifé par l'utilisateur<br>
+	 * @return : Le 'post' tel que sauvegardé dans la BD<br>
+	 * <br>
 	 */
 	
 	public Pair<Topic, Post> updatePost(Integer id, String comment) {
@@ -280,10 +298,14 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Fontion qui permet d'effacer un post. En fait on ne fait que modifier le champ 'isActive' qu'on met à 0
-	 *  Ainsi un 'post' pourra être réactiver par une administrateur au besoin
-	 * @param id : l'identifiant du 'post'
-	 * @return : le post modifié et sauvegardé dans la BD
+	 * <br>
+	 * Fontion qui permet d'effacer un post. En fait on ne fait que modifier le champ 'isActive' qu'on met à 0<br>
+	 * <br>
+	 * Ainsi un 'post' pourra être réactiver par une administrateur au besoin<br>
+	 * <br>
+	 * @param id : l'identifiant du 'post'<br>
+	 * @return : le post modifié et sauvegardé dans la BD<br>
+	 * <br>
 	 */
 	
 	public Post deletePost(Integer id) {
@@ -307,11 +329,9 @@ public class PostService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	
-	
-	//@TODO: verify if not used before deleting it
 	//Used in PostServiceTest: to remove first
-	public Post save(Post post) {
-		
-		return postRepository.save(post);
-	}
+//	public Post save(Post post) {
+//		
+//		return postRepository.save(post);
+//	}
 }

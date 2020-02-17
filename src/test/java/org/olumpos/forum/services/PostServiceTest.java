@@ -27,16 +27,17 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui permet de tester les différentes méthodes de la class PostService.java
- * Ces méthode ssont appelées à partir des contrôleurs afin qu'elles puisses interagir avec la base de données
- * en fonction des requêtes et données transmises.
- * 
- * On utilise @MockBean pour les 'repositories' (TopicReository, PostRepository) afin d'émuler les accès à la base de données
- * puisqu'il s'agit de tester uniquement les méthodes de la classe PostService et non les accès à la bd
- * 
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui permet de tester les différentes méthodes de la class PostService.java<br>
+ * Ces méthode ssont appelées à partir des contrôleurs afin qu'elles puisses interagir avec la base de données<br>
+ * en fonction des requêtes et données transmises.<br>
+ * <br>
+ * On utilise @MockBean pour les 'repositories' (TopicReository, PostRepository) afin d'émuler les accès à la base de données<br>
+ * puisqu'il s'agit de tester uniquement les méthodes de la classe PostService et non les accès à la bd<br>
+ * <br>
+ * <br>
  *
  */
 
@@ -69,7 +70,9 @@ public class PostServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'obtention de la liste de tous les posts actifs ou non
+	 * <br>
+	 * Méthode qui teste l'obtention de la liste de tous les posts actifs ou non<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindAllPosts() {
@@ -135,7 +138,9 @@ public class PostServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'obtention de la liste de tous les posts actifs ou non pour un topic donné (id)
+	 * <br>
+	 * Méthode qui teste l'obtention de la liste de tous les posts actifs ou non pour un topic donné (id)<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindAllPostsByTopicId() {
@@ -206,7 +211,9 @@ public class PostServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'obtention d'un post en fonction de son identifiant
+	 * <br>
+	 * Méthode qui teste l'obtention d'un post en fonction de son identifiant<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindPostById() {
@@ -237,7 +244,9 @@ public class PostServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste l'ajout d'un post
+	 * <br>
+	 * Méthode qui teste l'ajout d'un post<br>
+	 * <br>
 	 */
 	
 	@Test
@@ -289,8 +298,9 @@ public class PostServiceTest {
 
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
-	/**
-	 * Méthode qui teste l'ajout d'un post
+	/**<br>
+	 * Méthode qui teste l'ajout d'un post<br>
+	 * <br>
 	 */
 	
 	@Test
@@ -338,7 +348,9 @@ public class PostServiceTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste la mise à jour d'un post
+	 * <br>
+	 * Méthode qui teste la mise à jour d'un post<br>
+	 * <br>
 	 */
 	@Test
 	public void testUpdatePost() {
@@ -395,7 +407,9 @@ public class PostServiceTest {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Méthode qui teste la désactivation d'un post
+	 * <br>
+	 * Méthode qui teste la désactivation d'un post<br>
+	 * <br>
 	 */
 	@Test
 	public void testDeletePost() {

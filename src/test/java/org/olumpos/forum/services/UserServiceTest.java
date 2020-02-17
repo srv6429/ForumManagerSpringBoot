@@ -23,17 +23,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui permet de tester les différentes méthodes de la class UserService.java
- * Ces méthode ssont appelées à partir des contrôleurs afin qu'elles puisses interagir avec la base de données
- * en fonction des requêtes et données transmises.
- * 
- * On utilise @MockBean pour le 'repository' (UserReository) afin d'émuler les accès à la base de données
- * puisqu'il s'agit de tester uniquement les méthodes de la classe UserService et non les accès à la bd
- * 
- *
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui permet de tester les différentes méthodes de la class UserService.java<br>
+ * Ces méthode ssont appelées à partir des contrôleurs afin qu'elles puisses interagir avec la base de données<br>
+ * en fonction des requêtes et données transmises.<br>
+ * <br>
+ * On utilise @MockBean pour le 'repository' (UserReository) afin d'émuler les accès à la base de données<br>
+ * puisqu'il s'agit de tester uniquement les méthodes de la classe UserService et non les accès à la bd<br>
+ * <br>
+ *<br>
  */
 
 @RunWith(SpringRunner.class)
@@ -60,7 +60,9 @@ public class UserServiceTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester l'obtention d'un utilisateur en fonction de son courriel ou pseudonyme
+	 * <br>
+	 * Méthode qui permet de tester l'obtention d'un utilisateur en fonction de son courriel ou pseudonyme<br>
+	 * <br>
 	 */
 	
 	@Test
@@ -98,7 +100,9 @@ public class UserServiceTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester l'obtention d'un utilisateur en fonction de son identifiant
+	 * <br>
+	 * Méthode qui permet de tester l'obtention d'un utilisateur en fonction de son identifiant<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindById() {
@@ -133,7 +137,9 @@ public class UserServiceTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de créer un nouvel utilisateur 
+	 * <br>
+	 * Méthode qui permet de créer un nouvel utilisateur<br>
+	 * <br> 
 	 */
 	@Test
 	public void testCreateUser() {
@@ -167,8 +173,10 @@ public class UserServiceTest {
 	// *************************************************************************************************************************************************
 
 	/**
-	 * Méthode qui permet de mettre à jour les informations d'un utilisateur 
-	 * L'utilisateur doit être connecté et donc avoir le statut USER ou ADMIN
+	 * <br>
+	 * Méthode qui permet de mettre à jour les informations d'un utilisateur<br> 
+	 * L'utilisateur doit être connecté et donc avoir le statut USER ou ADMIN<br>
+	 * <br>
 	 */
 	@Test
 	@WithMockUser(username="admin",roles={"USER","ADMIN"})
@@ -215,8 +223,10 @@ public class UserServiceTest {
 	// *************************************************************************************************************************************************
 
 	/**
-	 * Méthode qui permet de mettre à jour les informations d'un utilisateur 
-	 * L'utilisateur doit être connecté et donc avoir le statut USER ou ADMIN
+	 * <br>
+	 * Méthode qui permet de mettre à jour les informations d'un utilisateur<br> 
+	 * L'utilisateur doit être connecté et donc avoir le statut USER ou ADMIN<br>
+	 * <br>
 	 */
 
 	@Test
@@ -266,8 +276,11 @@ public class UserServiceTest {
 	// *************************************************************************************************************************************************
 
 	/**
-	 * Méthode qui permet de mettre à jour les informations d'un utilisateur 
-	 * L'utilisateur doit être connecté et donc avoir le statut USER ou ADMIN
+	 * <br>
+	 * Méthode qui permet de mettre à jour les informations d'un utilisateur<br>
+	 * <br> 
+	 * L'utilisateur doit être connecté et donc avoir le statut USER ou ADMIN<br>
+	 * <br>
 	 */
 
 	@Test
@@ -317,8 +330,10 @@ public class UserServiceTest {
 	//*************************************************************************************************************************************************
 
 	/**
-	 * Méthode qui permet de mettre à jour les informations d'un utilisateur 
-	 * en l'activant/désactivant
+	 * <br>
+	 * Méthode qui permet de mettre à jour les informations d'un utilisateur<br> 
+	 * en l'activant/désactivant<br>
+	 * <br>
 	 */
 	@Test
 	@WithMockUser(username="admin",roles={"ADMIN"})

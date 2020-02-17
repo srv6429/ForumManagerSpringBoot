@@ -44,14 +44,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * 
- * @author daristote
- * 
- * Classe test qui permet de tester les endpoints de PostController.java
- * On utilise @MockBean pour marquer le PostService utilisé dans le PostController
- * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthdoes de PostService.java
- * 
- *  On utilise MockMvc pour émuler un appel aux différentes fonctions de PostController qui gèrent les EndPoints
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe test qui permet de tester les endpoints de PostController.java<br>
+ * <br>
+ * On utilise @MockBean pour marquer le PostService utilisé dans le PostController<br>
+ * <br>
+ * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthdoes de PostService.java<br>
+ * <br>
+ *  On utilise MockMvc pour émuler un appel aux différentes fonctions de PostController qui gèrent les EndPoints<br>
+ *  <br>
  *
  */
 
@@ -95,9 +98,11 @@ public class PostControllerTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /posts/{id} avec la méthode GET, et qui doit retourner la liste de tous els posts pour un topic (id) donné
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /posts/{id} avec la méthode GET, et qui doit retourner la liste de tous els posts pour un topic (id) donné<br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	
 	
@@ -158,11 +163,12 @@ public class PostControllerTest {
 
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
-	/**
-	 * Méthode qui teste le Endpoint: /posts/{id}/{comment} avec la méthode POST et qui doit 
-	 * enregistrer un nouveau post pour un topic donné 
-	 * 
-	 * @throws Exception
+	/**<br>
+	 * Méthode qui teste le Endpoint: /posts/{id}/{comment} avec la méthode POST et qui doit<br> 
+	 * enregistrer un nouveau post pour un topic donné <br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testAddPost() throws Exception {
@@ -201,10 +207,12 @@ public class PostControllerTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /posts/{id}/{comment} avec la méthode PUT et qui doit 
-	 * enregistrer un post dont le commentaire a été modifié par son auteur 
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /posts/{id}/{comment} avec la méthode PUT et qui doit<br> 
+	 * enregistrer un post dont le commentaire a été modifié par son auteur <br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testUpdatePost() throws Exception {
@@ -241,10 +249,13 @@ public class PostControllerTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /posts/{id} avec la méthode DELETE et qui doit 
-	 * enregistrer un post qui a été désactivé par son auteur  
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /posts/{id} avec la méthode DELETE et qui doit<br>
+	 * <br> 
+	 * enregistrer un post qui a été désactivé par son auteur<br>  
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testDeletePost() throws Exception {

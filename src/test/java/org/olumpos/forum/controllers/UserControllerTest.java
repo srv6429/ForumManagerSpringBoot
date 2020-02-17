@@ -40,14 +40,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * 
- * @author daristote
- * 
- * Classe test qui permet de tester les endpoints de UserController.java
- * On utilise @MockBean pour marquer le UserService utilisé dans le User Controller
- * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthdoes de PostService.java
- * 
- *  On utilise MockMvc pour émuler un appel aux différentes fonctions de UserController qui gèrent les EndPoints
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe test qui permet de tester les endpoints de UserController.java<br>
+ * <br>
+ * On utilise @MockBean pour marquer le UserService utilisé dans le User Controller<br>
+ * <br>
+ * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthdoes de PostService.java<br>
+ * <br>
+ *  On utilise MockMvc pour émuler un appel aux différentes fonctions de UserController qui gèrent les EndPoints<br>
+ *  <br>
  *
  */
 
@@ -90,10 +93,12 @@ public class UserControllerTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /profile/ avec la méthode GET, et qui doit rediriger 
-	 * l'utilisateur connecté vers la page profil
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /profile/ avec la méthode GET, et qui doit rediriger<br> 
+	 * l'utilisateur connecté vers la page profil<br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testGetProfile() throws Exception {
@@ -218,10 +223,12 @@ public class UserControllerTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /admin/users/{id} avec la méthode PUT et qui doit 
-	 * mettre à jour le statut d'un utilisateur, i.e. en l'avtivant u le désactivant 
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /admin/users/{id} avec la méthode PUT et qui doit<br> 
+	 * mettre à jour le statut d'un utilisateur, i.e. en l'avtivant u le désactivant <br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testToggleUser() throws Exception {

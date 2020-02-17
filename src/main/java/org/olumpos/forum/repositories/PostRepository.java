@@ -7,16 +7,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 /**
- *  @author daristote
- * 
- * Interface qui étend l'interface générique 'JpaRepository', permettant l'utilisation de plusieurs fonctions définies 
- * On paramétrise la classe avec le type de l'entité (objet java associé à une table de la BD) qui est ici Post
- * ainsi que le type de la clé primaire de la table, i.e. Integer
- *
- * Certaines fonctions on été ajoutées. 
- * 
- * L'annotation @Query permet de définir la requête HQL (Hibernate Query Language) utilisée pour obtenir le résultat désiré
- *
+ * <br>
+ *  @author daristote<br>
+ * <br>
+ * Interface qui étend l'interface générique 'JpaRepository', permettant l'utilisation de plusieurs fonctions définies<br> 
+ * On paramétrise la classe avec le type de l'entité (objet java associé à une table de la BD) qui est ici Post<br>
+ * ainsi que le type de la clé primaire de la table, i.e. Integer<br>
+ *<br>
+ * Certaines fonctions on été ajoutées.<br> 
+ * <br>
+ * L'annotation @Query permet de définir la requête HQL (Hibernate Query Language) utilisée pour obtenir le résultat désiré<br>
+ *<br>
+ *<br>
  */
 
 public interface PostRepository extends JpaRepository<Post, Integer> {

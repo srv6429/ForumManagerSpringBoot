@@ -42,14 +42,17 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * 
- * @author daristote
- * 
- * Classe test qui permet de tester les endpoints de TopicController.java
- * On utilise @MockBean pour marquer le TopicService utilisé dans le Topic Controller
- * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthdoes de PostService.java
- * 
- *  On utilise MockMvc pour émuler un appel aux différentes fonctions de TopicController qui gèrent les EndPoints
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe test qui permet de tester les endpoints de TopicController.java<br>
+ * <br>
+ * On utilise @MockBean pour marquer le TopicService utilisé dans le Topic Controller<br>
+ * <br>
+ * Ainsi on émule les résultats obtenus sans avoir à appeler les vraies méthdoes de PostService.java<br>
+ * <br>
+ *  On utilise MockMvc pour émuler un appel aux différentes fonctions de TopicController qui gèrent les EndPoints<br>
+ *  <br>
  *
  */
 
@@ -95,9 +98,11 @@ public class TopicControllerTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /topics avec la méthode GET, et qui doit retourner la liste de tous les topics ouverts
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /topics avec la méthode GET, et qui doit retourner la liste de tous les topics ouverts<br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testAllTopics() throws Exception {
@@ -138,10 +143,13 @@ public class TopicControllerTest {
 	// *************************************************************************************************************************************************
 	// *************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /topics/{title}/{comment} avec la méthode POST et qui doit 
-	 * enregistrer un nouveau topic ainsi qu'un premier post 
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /topics/{title}/{comment} avec la méthode POST et qui doit<br>
+	 * <br> 
+	 * enregistrer un nouveau topic ainsi qu'un premier post<br> 
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testPostOneTopic() throws Exception {
@@ -180,10 +188,12 @@ public class TopicControllerTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /topics/{id}/{title} avec la méthode PUT et qui doit 
-	 * mettre à jour et enregistrer  un topic dont le titre a été modifié par son auteur 
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /topics/{id}/{title} avec la méthode PUT et qui doit<br>
+	 * mettre à jour et enregistrer  un topic dont le titre a été modifié par son auteur<br> 
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testUpdateTopic() throws Exception {
@@ -212,10 +222,12 @@ public class TopicControllerTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui teste le Endpoint: /topics/{id} avec la méthode DELETE et qui doit 
-	 * mettre à jour et enregistrer un topic qui a été fermé par son auteur  
-	 * 
-	 * @throws Exception
+	 * <br>
+	 * Méthode qui teste le Endpoint: /topics/{id} avec la méthode DELETE et qui doit<br> 
+	 * mettre à jour et enregistrer un topic qui a été fermé par son auteur  <br>
+	 * <br>
+	 * @throws Exception<br>
+	 * <br>
 	 */
 	@Test
 	public void testDeleteTopic() throws Exception {

@@ -17,11 +17,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * 
- * @author daristote
- * 
- * Utilisation d'une classe personnalisée en tant que @Service pour authentifier un utilisateur
- *
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Utilisation d'une classe personnalisée en tant que @Service pour authentifier un utilisateur<br>
+ *<br>
  */
 
 @Service
@@ -46,11 +46,23 @@ public class CustomUserDetailsService implements UserDetailsService {
 			return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthorities(user));
 	}
 	
+	//*************************************************************************************************************************************************
+	//*************************************************************************************************************************************************
+	/**
+	 * <br>
+	 * Méthode qui permet d'obtneir une liste de tous les rôles de l'utilisateur<br>
+	 * <br>
+	 * On applique la fonction sur chacun des objets de type Role, i.e. en récupérant le nom<br>
+	 * 
+	 * On convertit le stream en tableau de String contenant tous les rôle octroyés à l'utilisateur<br>
+	 * <br>
+	 * @param user : l'utilisateur<br>
+	 * @return : une liste des rôles de l'utilisateur<br>
+	 * <br>
+	 */
 	private Collection<? extends GrantedAuthority> getAuthorities(User user) {
 		
-		//On obtient une liste de tous les rôle de l'utilisateur
-		//on applique la fonction sur chacun des objets de type Role, i.e. en récupérant le nom
-		//On convertit le stream en tableau de String contenant tous les rôle octroyés à l'utilisateur
+
 		String[] userRoles = user.getRoles().stream().map(role -> role.getName()).toArray((String[]::new));
 
 		//On retourne une liste de type 'GrantedAuthorities'

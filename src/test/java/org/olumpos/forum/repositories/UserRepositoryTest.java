@@ -25,20 +25,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * 
- * @author daristote
- *
- * Classe qui permet de tester les méthodes de la class userRepository et les  accès à la base de données
- * 
- * Les méthode qui sont annotées avec @Transactional permettent de n'effectuer aucun changement dans la base de données
- * En effet, jumulées avec @Test, l'opération 'rollback' est automatiquement effectuée après l'exécution de la fonction
- * Ainsi, on peut procéder aux tests sans craindre de 'polluer' la bd
- * 
- * Ces tests ne peuvent s'effecteur qu'avec une BD de données initialisée contenant le schéma du forum
- * Pour désactiver les tests, on peut commenter les annotations @Test précédant les méthodes
- * Il est toutefois nécessaire de laisse décommenté l'annotation devant dummyMethod(), car une classe de test doit au moins 
- * ontenir une méthode à tester
- *
+ * <br>
+ * @author daristote<br>
+ *<br>
+ * Classe qui permet de tester les méthodes de la class userRepository et les  accès à la base de données<br>
+ * <br>
+ * Les méthode qui sont annotées avec @Transactional permettent de n'effectuer aucun changement dans la base de données<br>
+ * En effet, jumulées avec @Test, l'opération 'rollback' est automatiquement effectuée après l'exécution de la fonction<br>
+ * Ainsi, on peut procéder aux tests sans craindre de 'polluer' la bd<br>
+ * <br>
+ * Ces tests ne peuvent s'effecteur qu'avec une BD de données initialisée contenant le schéma du forum<br>
+ * Pour désactiver les tests, on peut commenter les annotations @Test précédant les méthodes<br>
+ * Il est toutefois nécessaire de laisse décommenté l'annotation devant dummyMethod(), car une classe de test doit au moins<br> 
+ * ontenir une méthode à tester<br>
+ *<br>
  */
 
 
@@ -67,7 +67,9 @@ public class UserRepositoryTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester l'obtnetion de la liste de tous les users dans la bd
+	 * <br>
+	 * Méthode qui permet de tester l'obtnetion de la liste de tous les users dans la bd<br>
+	 * <br>
 	 */
 	
 	@Test
@@ -91,7 +93,9 @@ public class UserRepositoryTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester la recherhe d'un user en fonction de son identifiant
+	 * <br>
+	 * Méthode qui permet de tester la recherhe d'un user en fonction de son identifiant<br>
+	 * <br>
 	 */
 	@Test
 	public void testFindById() {
@@ -110,8 +114,10 @@ public class UserRepositoryTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester l'ajout d'un user
-	 * @Transactional assure qu'aucun ajout ne sera fait, i.e. qu'un rollback sera effectué à la fin de l'opération
+	 * <br>
+	 * Méthode qui permet de tester l'ajout d'un user<br>
+	 * @Transactional assure qu'aucun ajout ne sera fait, i.e. qu'un rollback sera effectué à la fin de l'opération<br>
+	 * <br>
 	 */
 	@Test
 	//@Transactional(propagation = Propagation.NOT_SUPPORTED) // no rollback; changes will be persisted in DB
@@ -146,8 +152,10 @@ public class UserRepositoryTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester la mise à jour d'un user
-	 * @Transactional assure qu'aucun changementne sera fait, i.e. qu'un rollback sera effectué à la fin de l'opération
+	 * <br>
+	 * Méthode qui permet de tester la mise à jour d'un user<br>
+	 * @Transactional assure qu'aucun changementne sera fait, i.e. qu'un rollback sera effectué à la fin de l'opération<br>
+	 * <br>
 	 */
 	@Test
 	//@Transactional(propagation = Propagation.NOT_SUPPORTED) // no rollback; changes will be persisted in DB
@@ -224,8 +232,10 @@ public class UserRepositoryTest {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de tester la désactivation d'un user
-	 * @Transactional assure qu'aucun changement ne sera fait, i.e. qu'un rollback sera effectué à la fin de l'opération
+	 * <br>
+	 * Méthode qui permet de tester la désactivation d'un user<br>
+	 * @Transactional assure qu'aucun changement ne sera fait, i.e. qu'un rollback sera effectué à la fin de l'opération<br>
+	 * <br>
 	 */
 	@Test
 	//@Transactional(propagation = Propagation.NOT_SUPPORTED) // no rollback; changes will be persisted in DB

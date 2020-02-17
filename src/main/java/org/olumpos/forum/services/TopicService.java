@@ -19,21 +19,25 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * 
- * @author daristote
- *
- * Classe qui permet la gestion liée à l'ajout ou la modification de topic
- * 
- * Utilisation des interfaces qui permettent l'accès aux tables Topic (TopicRepository) 
- * Les instances qui implémentent les interfaces sont automatiquement injectées (CDI: Context Dependency Injetion) lors de l'instanciation de la classe
- * 
- * La classe est annotée avec @Transactional, ce qui assure que toutes les méthodes qui accèdent à la base de données le sont dans 
- * le cadre d'une transaction
- * 
- * On aurait pu annoter seulement les méthodes qui nécessitent une transaction, i.e. qui modifie les entreés des tables
- * Mais il est plus simple d'annoter la classe 
+ * <br>
+ * @author daristote<br>
+ *<br>
+ * Classe qui permet la gestion des requêtes liées à l'ajout ou la modification de topic<br>
+ * <br>
+ * Utilisation des interfaces qui permettent l'accès aux tables Topic (TopicRepository) <br>
+ * Les instances qui implémentent les interfaces sont automatiquement injectées (CDI: Context Dependency Injetion) lors de l'instanciation de la classe<br>
+ * <br>
+ * La classe est annotée avec @Transactional, ce qui assure que toutes les méthodes qui accèdent à la base de données le sont dans <br>
+ * le cadre d'une transaction<br>
+ * <br>
+ * On aurait pu annoter seulement les méthodes qui nécessitent une transaction, i.e. qui modifie les entreés des tables<br>
+ * Mais il est plus simple d'annoter la classe <br>
+ * <br>
+ * <br>
  * 
  */
+
+//Annotée comme Service
 @Service
 @Transactional
 public class TopicService {
@@ -48,15 +52,18 @@ public class TopicService {
 	@Autowired
 	private PostRepository postRepository;
 	
-	/**
-	 * Méthode qui permet d'obtenir la liste de tous les topics de la BD
-	 * @return List(Topic): liste des topics
-	 */
+	
+	//*************************************************************************************************************************************************
+	//*************************************************************************************************************************************************
 	
 	/**
-	 * 
-	 * @return List
+	 * <br>
+	 * Méthode qui permet d'obtenir la liste de tous les topics de la BD<br>
+	 * <br>
+	 * @return List(Topic): liste des topics<br>
+	 * <br>
 	 */
+	
 	public List<Topic> findAllTopics(){
 		
 		List<Topic> topics =  topicRepository.findAll(Sort.by(Direction.DESC, "udpate_date"));
@@ -68,8 +75,11 @@ public class TopicService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Méthode qui permet d'obtenir la liste de tous les topics ouverts de la BD
-	 * @return List(Topic): liste des topics
+	 * <br>
+	 * Méthode qui permet d'obtenir la liste de tous les topics ouverts de la BD<br>
+	 * <br>
+	 * @return List(Topic): liste des topics<br>
+	 * <br>
 	 */
 	public List<Topic> findAllOpenTopics(){
 		
@@ -82,11 +92,13 @@ public class TopicService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de chercher et retourner un topic en fonction de son identifiant
-	 * 
-	 * @param id : l'identifiant du topic
-	 * 
-	 * @return Topic: le topic si trouvé, null sinon
+	 * <br>
+	 * Méthode qui permet de chercher et retourner un topic en fonction de son identifiant<br>
+	 * <br>
+	 * @param id : l'identifiant du topic<br>
+	 * <br>
+	 * @return Topic: le topic si trouvé, null sinon<br>
+	 * <br>
 	 */
 	
 	public Topic findTopicById(Integer id) {
@@ -98,13 +110,15 @@ public class TopicService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Méthode qui permet d'ajouter un nouveau topic accompagné d'un premier post
-	 * 
-	 * @param title : le titre du nouveau topic
-	 * @param comment : le commentaire du premier post
-	 * @param user : l'utilisateur connecté qui peut ajouter un nouveau topic
-	 * 
-	 * @return : Pair (Topic, Post) contenant les nouveaux topic et ost
+	 * <br>
+	 * Méthode qui permet d'ajouter un nouveau topic accompagné d'un premier post<br>
+	 * <br>
+	 * @param title : le titre du nouveau topic<br>
+	 * @param comment : le commentaire du premier post<br>
+	 * @param user : l'utilisateur connecté qui peut ajouter un nouveau topic<br>
+	 * <br>
+	 * @return : Pair (Topic, Post) contenant les nouveaux topic et ost<br>
+	 * <br>
 	 */
 	
 	public Pair<Topic, Post> addTopic(String title, String comment, User user) {
@@ -142,12 +156,14 @@ public class TopicService {
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Méthode qui permet de mettre à jour un topic, i.e. le titre
-	 * 
-	 * @param id : l'identifiant du topic
-	 * @param title : le nouveau titre
-	 * 
-	 * @return Topic: le topic sauvegardé dans la bd
+	 * <br>
+	 * Méthode qui permet de mettre à jour un topic, i.e. le titre<br>
+	 * <br>
+	 * @param id : l'identifiant du topic<br>
+	 * @param title : le nouveau titre<br>
+	 * <br>
+	 * @return Topic: le topic sauvegardé dans la bd<br>
+	 * <br>
 	 * 
 	 */
 	public Topic updateTopic(Integer id, String title) {
@@ -179,12 +195,13 @@ public class TopicService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet d'effacer un topic, i.e. initialiser le champ isActive à 0
-	 * 
-	 * @param id : l'identifiant du topic
-	 * 
-	 * @return Topic: le topic sauvegardé dans la bd
-	 * 
+	 * <br>
+	 * Méthode qui permet d'effacer un topic, i.e. initialiser le champ isActive à 0<br>
+	 * <br>
+	 * @param id : l'identifiant du topic<br>
+	 * <br>
+	 * @return Topic: le topic sauvegardé dans la bd<br>
+	 * <br>
 	 */
 	public Topic deleteTopic(Integer id) {
 
@@ -205,14 +222,6 @@ public class TopicService {
 		
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
-	//Non utilisé
-	//Utilisé uneiquement pour TopicServiceTest qui est remplacé par TopicServiceTest02
-	
-	public Topic saveTopic(Topic topic) {
-		
-		return topicRepository.save(topic);
-		
-	}
-	
+
 
 }

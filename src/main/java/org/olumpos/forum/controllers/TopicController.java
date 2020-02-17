@@ -26,16 +26,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui contient les 'endpoints' des requêtes http pour les topics
- * 
- * Les requêtes lieés aux topics sont gérées par les diffreéntes méthodes définies ici
- * Les paramètres des méthodes contiennent les paramètres transmis dans les requêtes (GET, POST, PUT, DELETE )
- * ainsi qu'une instance de l'interface Model qui permet d'inclure et modifier les attributs de session et des requêtes
- *
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui contient les 'endpoints' des requêtes http pour les topics<br>
+ * <br>
+ * Les requêtes lieés aux topics sont gérées par les diffreéntes méthodes définies ici<br>
+ * Les paramètres des méthodes contiennent les paramètres transmis dans les requêtes (GET, POST, PUT, DELETE )<br>
+ * ainsi qu'une instance de l'interface Model qui permet d'inclure et modifier les attributs de session et des requêtes<br>
+ *<br>
  */
+
 //Définir la classe comme un contrôleur
 @Controller
 //base des uri relatives aux requêtes http pour les topics
@@ -55,13 +56,16 @@ public class TopicController{
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de récupérer l'ensmeble des topics ouverts une fois que L'utilisateur est dûment connecté  
-	 * @param model : model qui permet d'enregistrer l'attribut 'topics' dans la requête et qui permttra à la vue 'topics' d'afficher la liste sur
-	 * la page html 
+	 * <br>
+	 * Méthode qui permet de récupérer l'ensmeble des topics ouverts une fois que L'utilisateur est dûment connecté<br>
+	 * <br>  
+	 * @param model : model qui permet d'enregistrer l'attribut 'topics' dans la requête et qui permttra à la vue 'topics' d'afficher<br> 
+	 * la liste surla page html<br> 
+	 * <br>
+	 * @return : la vue associée à la page html<br>
+	 * <br>
+	 * TODO: gestion d'une exception si 'id' ne correspond pas à un topic valide<br>
 	 * 
-	 * @return : la vue associée à la page html
-	 * 
-	 * TODO: gestion d'une exception si 'id' ne correspond pas à un topic valide
 	 */
 	@GetMapping("/topics")
 	public String getTopics(Model model){
@@ -88,16 +92,17 @@ public class TopicController{
 	//*************************************************************************************************************************************************
 	
 	/**
-	 * Méthode qui permet de récupérer un topic en fonction de son identifiant
-	 * 
-	 * @param id : dentifiant du topic
-	 * 
-	 * @return une chaîne de cractère correspondant à la vue enregistrée dnas le fichier de configuration et qui est associée 
-	 * 	la page html appropriée
-	 * 
-	 * 
+	 * <br>
+	 * Méthode qui permet de récupérer un topic en fonction de son identifiant<br>
+	 * <br>
+	 * @param id : dentifiant du topic<br>
+	 * <br>
+	 * @return une chaîne de cractère correspondant à la vue enregistrée dnas le fichier de configuration et qui est associée<br> 
+	 * 	la page html appropriée<br>
+	 * <br>
+	 *<br>
 	 * 	For the eyes of testers only
-	 * 
+	 * <br>
 	 */
 	@GetMapping(value="/topic/{id}")
 	public String getTopic(@PathVariable("id") int id){
@@ -117,17 +122,20 @@ public class TopicController{
 	
 	
 	/**
-	 * Méthode qui permet d'enregistrer un nouveau thème (topic) ainsi qu'un nouveau commentaire
-	 * Un topic ne peut être créé sans un commentaire 
-	 * Utilisation de la méthode POST
-	 * 
-	 * @param title : le titre du nouveau topic
-	 * @param comment : le premier commentaire à enregistrer
-	 * @param model : le model de la requête
-	 * 
-	 * @return : ResponseEntity paramétré avec un objet de type JSONResponse qui détermine si la réponse est valide ou non
-	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec
-	 * 
+	 * <br>
+	 * Méthode qui permet d'enregistrer un nouveau thème (topic) ainsi qu'un nouveau commentaire<br>
+	 * <br>
+	 * Un topic ne peut être créé sans un commentaire <br>
+	 * <br>
+	 * Utilisation de la méthode POST<br>
+	 * <br>
+	 * @param title : le titre du nouveau topic<br>
+	 * @param comment : le premier commentaire à enregistrer<br>
+	 * @param model : le model de la requête<br>
+	 * <br>
+	 * @return : ResponseEntity paramétré avec un objet de type JSONResponse qui détermine si la réponse est valide ou non<br>
+	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec<br>
+	 * <br>
 	 */
 	
 	@PostMapping(value="/topics/{title}/{comment}")//, produces = "application/json;charset=UTF-8")
@@ -159,15 +167,17 @@ public class TopicController{
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet d'enregistrer un titre modifié pour un topic 
-	 * Utilisation de la méthode PUT
-	 * 
-	 * @param id : l'identifiant du topic
-	 * @param title : le titre du topic
-	 * 
-	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non
-	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec
-	 * 
+	 * <br>
+	 * Méthode qui permet d'enregistrer un titre modifié pour un topic<br>
+	 * <br> 
+	 * Utilisation de la méthode PUT<br>
+	 * <br>
+	 * @param id : l'identifiant du topic<br>
+	 * @param title : le titre du topic<br>
+	 * <br>
+	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non<br>
+	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec<br>
+	 * <br>
 	 */
 	@PutMapping( value="/topics/{id}/{title}")//, produces = "application/json;charset=UTF-8")
 	public ResponseEntity<JSONResponse> updateTopic(@PathVariable("id") int id, @PathVariable("title") String title){
@@ -194,15 +204,16 @@ public class TopicController{
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet d'effacer un topic par l'utilisateur
-	 * Utilisation de la méthode DELETE
-	 * On n'efface pas le post de la bd; on ne fait que le désactivé. Ainsi il ne sera plus apparent dans la liste des topics
-	 * 
-	 * @param id : l'identifiant du topic
-	 * 
-	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non
-	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec
-	 * 
+	 * <br>
+	 * Méthode qui permet d'effacer un topic par l'utilisateur<br>
+	 * Utilisation de la méthode DELETE<br>
+	 * On n'efface pas le post de la bd; on ne fait que le désactivé. Ainsi il ne sera plus apparent dans la liste des topics<br>
+	 * <br>
+	 * @param id : l'identifiant du topic<br>
+	 * <br>
+	 * @return : ResponseEntity paramétré avec un objet de type JSONReponse qui détermine si la réponse est valide ou non<br>
+	 * 		Le résultat est géré sous forme d'objet JSON par jQuery sur la page html et affiche une message d'erreur si échec<br>
+	 * <br>
 	 */
 	
 	@DeleteMapping( value="/topics/{id}")//, produces = "application/json;charset=UTF-8")

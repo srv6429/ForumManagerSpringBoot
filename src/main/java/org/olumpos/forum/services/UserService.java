@@ -16,13 +16,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * 
- * @author daristote
- * 
- * Classe qui permet de gérer les opération concernant les utilisateurs
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe qui permet de gérer les opération concernant les utilisateurs<br>
  *
  */
-
+//Service Spring
 @Service
 @Transactional
 public class UserService {
@@ -35,12 +35,17 @@ public class UserService {
 	@Autowired
 	UserRepository userRepository;
 	
+	//*************************************************************************************************************************************************
+	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui prmet d,Obtenir la liste de tous les utilisteurs
-	 * 
-	 * L'annotation 'Secured' permet de renforcer la sécurité: seuls les utilisateurs ayant le rôle d'administrateur
-	 * ont l'autorisation de récupérer la liste de la bd
-	 * @return List contenant tous les utilisteurs
+	 * <br>
+	 * Méthode qui prmet d,Obtenir la liste de tous les utilisteurs<br>
+	 * <br>
+	 * L'annotation 'Secured' permet de renforcer la sécurité: seuls les utilisateurs ayant le rôle d'administrateur<br>
+	 * ont l'autorisation de récupérer la liste de la bd<br>
+	 * <br>
+	 * @return List contenant tous les utilisteurs<br>
+	 * <br>
 	 */
 	@Secured("ROLE_ADMIN")
 	public List<User> findAllUsers(){
@@ -50,10 +55,13 @@ public class UserService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de cherher un utilisateur avec soit son pseudonyme ou son adresse courriel
-	 * 
-	 * @param usernameOrEmail: String représetnant le pseudo/courriel
-	 * @return Optional (User) si trouvé, sinon un Optional avec valeur null
+	 * <br>
+	 * Méthode qui permet de cherher un utilisateur avec soit son pseudonyme ou son adresse courriel<br>
+	 * <br>
+	 * @param usernameOrEmail: String représetnant le pseudo/courriel<br>
+	 * <br>
+	 * @return Optional (User) si trouvé, sinon un Optional avec valeur null<br>
+	 * <br>
 	 */
 	public Optional<User> findByUsernameOrEmail(String usernameOrEmail) {
 		logger.log(Level.INFO, "in UserService.findByUsernameOrEmail ");
@@ -64,10 +72,13 @@ public class UserService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de cherher un utilisateur par son identifiant
-	 * 
-	 * @param id : identifiant de l'utilisateur
-	 * @return : User ou null si non trouvé
+	 * <br>
+	 * Méthode qui permet de cherher un utilisateur par son identifiant<br>
+	 * <br>
+	 * @param id : identifiant de l'utilisateur<br>
+	 * <br>
+	 * @return : User ou null si non trouvé<br>
+	 * <br>
 	 */
 	public User findUserById(Integer id) {
 		
@@ -80,11 +91,13 @@ public class UserService {
 	//*************************************************************************************************************************************************	
 
 	/**
-	 * Méthode qui permet de créer un nouvel utilisteur, i.e. de s'inscrire 
-	 * 
-	 * @param user: User avec les champs correctement remplis
-	 * 
-	 * @return : Utilisateur enregistré dans la BD
+	 * <br>
+	 * Méthode qui permet de créer un nouvel utilisteur, i.e. de s'inscrire<br> 
+	 * <br>
+	 * @param user: User avec les champs correctement remplis<br>
+	 * <br>
+	 * @return : Utilisateur enregistré dans la BD<br>
+	 * <br>
 	 */
 	//@Secured("ROLE_USER")
 	public User createUser(User user) {
@@ -115,13 +128,15 @@ public class UserService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de mettre à jour les informations conernant un utilisateur 
-	 * 
-	 * L'annotation 'PreAuthorize' permet de limiter l'accès à la méthode aux utilisateurs connectés seulemeent
-	 * 
-	 * @param user: User avec les champs mis à jour
-	 * 
-	 * @return User enregistré dans la bd
+	 * <br>
+	 * Méthode qui permet de mettre à jour les informations conernant un utilisateur<br>
+	 * <br> 
+	 * L'annotation 'PreAuthorize' permet de limiter l'accès à la méthode aux utilisateurs connectés seulemeent<br>
+	 * <br>
+	 * @param user: User avec les champs mis à jour<br>
+	 * <br>
+	 * @return User enregistré dans la bd<br>
+	 * <br>
 	 */
 	@PreAuthorize("isAuthenticated()")
 	public User updateUser(User user) {
@@ -132,14 +147,16 @@ public class UserService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet de mettre à jour les informations d'un utilisateurs
-	 *  
-	 * L'annotation 'PreAuthorize' permet de limiter l'accès à la méthode aux utilisateurs connectés seulemeent
-	 * 
-	 * @param currentUser : User avec les informations de l'utilisateur connecté avant la mise à jour
-	 * @param updatedUser : User avec les informations modifiées de l'utilisateur 
-	 * 
-	 * @return User: l'utilsateur avec les informations enregistrées dans la bd
+	 * <br>
+	 * Méthode qui permet de mettre à jour les informations d'un utilisateurs<br>
+	 *  <br>
+	 * L'annotation 'PreAuthorize' permet de limiter l'accès à la méthode aux utilisateurs connectés seulemeent<br>
+	 * <br>
+	 * @param currentUser : User avec les informations de l'utilisateur connecté avant la mise à jour<br>
+	 * @param updatedUser : User avec les informations modifiées de l'utilisateur <br>
+	 * <br>
+	 * @return User: l'utilsateur avec les informations enregistrées dans la bd<br>
+	 * <br>
 	 */
 	@PreAuthorize("isAuthenticated()")
 	public User updateUser(User currentUser, User updatedUser) {
@@ -158,13 +175,15 @@ public class UserService {
 	//*************************************************************************************************************************************************
 	//*************************************************************************************************************************************************
 	/**
-	 * Méthode qui permet à un adminstrateur d'activer/désactiver un utiisateur
-	 * 
-	 * L'annotation 'Secured' qui renforce la sécurité: seuls les utilisateur ayant le role d'administrateur
-	 * 
-	 * @param userId : lIdentifiant de l'utilisateur
-	 * 
-	 * @return User: l'utisateur avec le champ isActive modifié dans la bd
+	 * <br>
+	 * Méthode qui permet à un adminstrateur d'activer/désactiver un utiisateur<br>
+	 * <br>
+	 * L'annotation 'Secured' qui renforce la sécurité: seuls les utilisateur ayant le role d'administrateur<br>
+	 * <br>
+	 * @param userId : lIdentifiant de l'utilisateur<br>
+	 * <br>
+	 * @return User: l'utisateur avec le champ isActive modifié dans la bd<br>
+	 * <br>
 	 */
 	@Secured("ROLE_ADMIN")
 	public User toggleUser(Integer userId) {

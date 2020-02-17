@@ -26,23 +26,23 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * 
- * @author daristote
- *
- * Classe 'Entity' associée à la table 'user' du schema 'forum_springboot' 
- *
- * Les méthodes ('getter' et 'setter') sont utilisées pour initialiser les valeurs et les récupérer lorsque nécessaire
- *
- * Lorsque le nom des champs n'est pas le même que celui du champ correspondant de la table, 
- * l'annotation @Column est placée devant la déclaration avec le nom approprié de la table
- * 
- * Les champs annotés avec @Transient signifient qu'ils ne sont pas associés à un champ de la table
- * 
- *    
- * Les champs creationDate et updateDate sont de type LocalDateTime ce qui est conforme au type timestamp dans la bd
- * 
- * L'annotation @ManytoMany pour la List(Role) roles permet de relier un utilisteur à plusieurs rêles (ex.: 'USER' 'ADMIN')
- * 
+ * <br>
+ * @author daristote<br>
+ *<br>
+ * Classe 'Entity' associée à la table 'user' du schema 'forum_springboot'<br> 
+ *<br>
+ * Les méthodes ('getter' et 'setter') sont utilisées pour initialiser les valeurs et les récupérer lorsque nécessaire<br>
+ *<br>
+ * Lorsque le nom des champs n'est pas le même que celui du champ correspondant de la table,<br> 
+ * l'annotation @Column est placée devant la déclaration avec le nom approprié de la table<br>
+ * <br>
+ * Les champs annotés avec @Transient signifient qu'ils ne sont pas associés à un champ de la table<br>
+ * <br>
+ * Les champs creationDate et updateDate sont de type LocalDateTime ce qui est conforme au type timestamp dans la bd<br>
+ * <br>
+ * L'annotation @ManytoMany pour la List(Role) roles permet de relier un utilisteur à plusieurs rêles (ex.: 'USER' 'ADMIN')<br>
+ * <br>
+ * <br>
  */
 
 @Entity

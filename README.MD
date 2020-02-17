@@ -76,7 +76,7 @@ Voir: https://dev.mysql.com/doc/refman/5.7/en/grant.html
 
 
 Une fois l'utisateur créé, on doit préciser les paramètres de la connexion, i.e. le pseudonyme, le mot de passe 
-ainsi que l'URI de la connexion dans le fichier "application.properties" situé à la rcin du projet
+ainsi que l'URI de la connexion dans le fichier "application.properties" situé à la racine du projet
 Par exemple:
 
 ----- Dans application.properties ----- 
@@ -228,7 +228,7 @@ courriel: admin@olumpos.org
 
 Les mots de passe sont toutefois encodés avec l'algorithme BCrypt dans la base de données.
 
-On peut ainsi se connecté en tant qu'administrateur (admin, admin123) et voir les autres utilisateurs à la page 'admin/users/' 
+On peut ainsi se connecter en tant qu'administrateur (admin, admin123) et voir les autres utilisateurs à la page 'admin/users/' 
 accessible par le menu en haut de page
 
 

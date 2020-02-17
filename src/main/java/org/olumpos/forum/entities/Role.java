@@ -13,12 +13,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * 
- * @author daristote
- * 
- * Classe Entity qui est associée à la table role dans la BD
- * Permet de définir plusieurs rôles pour un utilisteur
- *
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe Entity qui est associée à la table role dans la BD<br>
+ * Permet de définir plusieurs rôles pour un utilisteur<br>
+ *<br>
+ *<br>
  */
 
 @Entity

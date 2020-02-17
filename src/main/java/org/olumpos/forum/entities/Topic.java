@@ -9,41 +9,41 @@ import java.util.List;
 
 /**
  * 
- * 
- * @author daristote
- * 
- * Classe 'Entity' associée à la table 'topic' du schema 'forum_springboot' 
- * 
- * Les champs représentent ceux de la table
- * 
- * Les méthodes ('getter' et 'setter') sont utilisées pour initialiser les valeurs et les récupérer lorsque nécessaire
- *
- * Lorsque le nom des champs n'est pas le même que celui du champ correspondant de la table, 
- * l'annotation @Column est placée devant la déclaration avec le nom approprié de la table
- * 
- * Les champs annotés avec @Transient signifient qu'ils ne sont pas associés à un champ de la table
- * 
- * Les champs creationDate et updateDate sont de type LocalDateTime ce qui est conforme au type timestamp dans la bd
-
- * Chaque topic de la base de données possèdent une clé étrangère: 
- * 		1. une première, 'user_id', reliant le topic à son créateur par la clé primaire (id) de la table 'user'
- * 
- * Il s'agit du nom défini dans la table de la base de données qui a été redéfini ici par userId
- * 
- * Ainsi chaque topic ne peut avoir qu'un seul créateur
- * 
- * L'annotation @ManytoOne permet de relier un topic à son créateur étant donnée qu'un utilisateur peut créer plusieurs topics 
- * 
- * Ainsi lorsqu'on recherhe les topics on obtient du même coup l'utilisateur qui l'a créé par son identifiant et 
- * un objet de type User est créé automatiquement alors que les champs appropriés sont initialisés avec cet objet
- * 
- * On peut ainsi obtenir toutes les données concernant les utilisateurs concernés
- * Heureusement, pour des questions de sécurité les mots de passe sont encodés.
- * 
- * 
- * L'annotation @OneToMany devant List (Post) posts illustre que le topic est référencé par tous les posts associés avec le champ 'topicFK' de la classe Post
- * C'est ainsi qu'on peut relier tous les posts au topic auquel ils sont associés
- * 
+ * <br>
+ * @author daristote<br>
+ * <br>
+ * Classe 'Entity' associée à la table 'topic' du schema 'forum_springboot'<br> 
+ * <br>
+ * Les champs représentent ceux de la table<br>
+ * <br>
+ * Les méthodes ('getter' et 'setter') sont utilisées pour initialiser les valeurs et les récupérer lorsque nécessaire<br>
+ *<br>
+ * Lorsque le nom des champs n'est pas le même que celui du champ correspondant de la table,<br> 
+ * l'annotation @Column est placée devant la déclaration avec le nom approprié de la table<br>
+ * <br>
+ * Les champs annotés avec @Transient signifient qu'ils ne sont pas associés à un champ de la table<br>
+ * <br>
+ * Les champs creationDate et updateDate sont de type LocalDateTime ce qui est conforme au type timestamp dans la bd<br>
+<br>
+ * Chaque topic de la base de données possèdent une clé étrangère:<br> 
+ * 		1. une première, 'user_id', reliant le topic à son créateur par la clé primaire (id) de la table 'user'<br>
+ * <br>
+ * Il s'agit du nom défini dans la table de la base de données qui a été redéfini ici par userId<br>
+ * <br>
+ * Ainsi chaque topic ne peut avoir qu'un seul créateur<br>
+ * <br>
+ * L'annotation @ManytoOne permet de relier un topic à son créateur étant donnée qu'un utilisateur peut créer plusieurs topics<br> 
+ * <br>
+ * Ainsi lorsqu'on recherhe les topics on obtient du même coup l'utilisateur qui l'a créé par son identifiant et<br> 
+ * un objet de type User est créé automatiquement alors que les champs appropriés sont initialisés avec cet objet<br>
+ * <br>
+ * On peut ainsi obtenir toutes les données concernant les utilisateurs concernés<br>
+ * Heureusement, pour des questions de sécurité les mots de passe sont encodés.<br>
+ * <br>
+ * L'annotation @OneToMany devant List (Post) posts illustre que le topic est référencé par tous les posts associés avec le champ 'topicFK' de la classe Post<br>
+ * C'est ainsi qu'on peut relier tous les posts au topic auquel ils sont associés<br>
+ * <br>
+ * <br>
  */
 
 @Entity(name = "Topic") //nom de l'entité, facultatif si le nom correspond au nom de la classe

@@ -1,15 +1,15 @@
 package org.olumpos.forum.entities;
 
 /************************************************************************************************************************
- * 
- * @author daristote
- *
- * Classe qui permet de retourner une paire d'un Topic et d'un Post lors de l'ajout d'un nouveau Topic
- * On paramétrise la classe avec deux types génériques, ce qui la rend réutilisable pour d'autres types d'objets que Topic et Post
- * 
- * @param <T> : type du champ first
- * @param <P> : type du champ second
- * 
+ * <br>
+ * @author daristote<br>
+ *<br>
+ * Classe qui permet de retourner une paire d'un Topic et d'un Post lors de l'ajout d'un nouveau Topic<br>
+ * On paramétrise la classe avec deux types génériques, ce qui la rend réutilisable pour d'autres types d'objets que Topic et Post<br>
+ * <br>
+ * @param <T> : type du champ first<br>
+ * @param <P> : type du champ second<br>
+ * <br>
  ************************************************************************************************************************/
 
 
