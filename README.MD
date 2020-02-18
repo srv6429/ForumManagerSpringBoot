@@ -27,9 +27,9 @@ I. Base de données:
 
 Le projet fonctionne avec une base de données relationnelle et a été testé avec le serveur MySQL 5.7.29 sur un systême Linux (x86_64) Debian 9.9
 
-Le fichier ‹forum.sql› situé à la racin du projet, peut être exécuté pour générer le shcema 'forum_springboot', les tables requises ainsi que quelques données à insérer
+Le fichier ‹forum_schema.sql› situé dans le répertoire files/sql, peut être exécuté pour générer le schema 'forum_springboot', les tables requises ainsi que quelques données à insérer
 
-On peut ex.cuter le fichier sql en ligne de commande ou utiliser un IDE (ex. MySQL Workbench)
+On peut exécuter le fichier sql en ligne de commande ou utiliser un IDE (ex. MySQL Workbench)
 
 Procédure en ligne de commande:
 
