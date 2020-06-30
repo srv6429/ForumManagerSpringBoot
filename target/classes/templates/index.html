@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorator="layout">
+      
+      <head>
+        <title>Forum de discution avec Spring Boot et Thymeleaf</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
+    		 <p>Bienvenue (<span sec:authentication="principal.username">Admin</span>) <span sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{message.welcome.admin}">Administrateur</span></p>
+    		 <p><a th:href="@{/home}" th:text="#{label.user.home}" >Accueil</a></p>
+		     <p sec:authorize="isAnonymous()"><a th:href="@{/login}" th:text="#{label.login}">Login</a></p>
+		     <p sec:authorize="isAnonymous()"><a th:href="@{/register}" th:text="#{label.register}">Register</a></p>
+
+<!--  		     <p sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin/home}" th:text="#{label.admin.home}">Administrateur</a></p> -->
+	       	<p sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin/users}" th:text="#{label.users}">Utilisateurs</a></p>
+		     <p sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></p>
+    	</div>
+    	
+    </body>
+    
+</html>

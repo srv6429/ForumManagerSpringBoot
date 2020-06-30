@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorator="layout">
+	<head>
+		<meta charset="UTF-8">
+		<title>List des utilisateurs</title>
+	</head>
+	<body>
+
+		<div layout:fragment="content">
+			<h3>Welcome <span sec:authentication="principal.username">User</span> (<span th:text="${user.id}"></span>)</h3>
+			<div id="users_container">
+			
+			<h2>Liste des utilisateurs</h2>
+						
+			<table sec:authorize="hasRole('ROLE_ADMIN')" id="users_table">
+				<tr>
+					<th>
+						<div class="user_header" id="user_header">
+								<span class="identifier">Id</span>
+								<span class="user_name">Nom</span>
+								<span class="user_email">Courriel</span>
+								<span class="user_creation_date">Date de création</span>
+								<span class="user_update_date">Dernière mise à jour</span>
+								<span class="user_role">Rôle</span>
+								<span class="user_active">Actif</span>
+								<span class="user_editor_button"></span>
+							</div>
+						</th>
+					</tr>
+					<tr th:each="userD: ${users}" th:class="${userDStat.odd}? 'odd':'even' ">
+						<td>
+							<div class="user_wrapper" id="user_wrapper">
+								<span class="identifier" th:text="${userD.id}">Id</span>
+								<span class="user_name" th:text="${userD.username}">Name</span>
+								<span class="user_email" th:text="${userD.email}"></span>
+								<span class="user_creation_date" th:text="${userD.creationDate}">Creation Date</span>
+								<span class="user_update_date" th:text="${userD.updateDate}">Update Date</span>
+								<span class="user_role" th:text="${userD.roles}">Role</span>
+								<span class="user_active" th:text="${userD.isActive}">Active</span>
+								<!--  
+								<c:if test="${userD.username != \"admin\"}">
+								-->
+								
+								<span class="button_wrapper right" th:id="${userD.id}" th:if="${userD.isAdmin()} == false">
+									<button class="user_status_button" th:id="${userD.id}">Activer/Désactiver</button>
+								</span>
+								<!-- 
+								</c:if>
+								 -->
+							</div>
+						</td>					
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
