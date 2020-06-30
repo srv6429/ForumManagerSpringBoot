@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * @author daristote
  * 
  * Classe contenant la fonction main pour lancer l'application 
- * Ajout d'un commentaire
+ * Modification d'un commentaire
  *
  */
 
